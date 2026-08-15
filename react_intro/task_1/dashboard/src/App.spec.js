@@ -1,29 +1,28 @@
+// task_0/dashboard/src/App.spec.js
+import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import App from './App.jsx';
 
-describe('App Component Tests', () => {
-  // Test 1: Single query to verify both the h1 element and text content
-  test('renders the h1 element with School Dashboard text', () => {
+describe('App (Task 0)', () => {
+  test('renders the <h1> with text "School dashboard"', () => {
     render(<App />);
-    const headingNode = screen.getByRole('heading', { name: /school dashboard/i, level: 1 });
-    expect(headingNode).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { level: 1, name: /school dashboard/i })
+    ).toBeInTheDocument(); // expect #1
   });
 
-  // Test 2: Checks the specific text within the 2 paragraphs
-  test('renders correct text content in the body and footer paragraphs', () => {
+  test('renders body/footer texts and the logo image', () => {
     render(<App />);
-    
-    const bodyNode = screen.getByText(/login to access the full dashboard/i);
-    const footerNode = screen.getByText(/copyright \d{4} - holberton school/i);
 
-    expect(bodyNode).toBeInTheDocument();
-    expect(footerNode).toBeInTheDocument();
-  });
+    expect(
+      screen.getByText(/login to access the full dashboard/i)
+    ).toBeInTheDocument(); // expect #2
 
-  // Test 3: Match image element by its alt attribute content
-  test('renders the logo image element with correct alt text', () => {
-    render(<App />);
-    const logoNode = screen.getByAltText(/holberton logo/i);
-    expect(logoNode).toBeInTheDocument();
+    const footerRegex = /copyright \d{4}.*holberton school/i;
+    expect(screen.getByText(footerRegex)).toBeInTheDocument(); // expect #3
+
+    expect(
+      screen.getByRole('img', { name: /holberton logo/i })
+    ).toBeInTheDocument(); // expect #4
   });
 });
