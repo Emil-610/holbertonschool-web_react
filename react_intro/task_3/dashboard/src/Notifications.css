@@ -1,0 +1,32 @@
+/* task_2/dashboard/src/Notifications.css */
+.notification-items {
+  border: 2px dashed #e1003c;
+  margin: 16px 24px 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #333;
+}
+
+.notification-items ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.notification-items li {
+  margin: 2px 0;
+}
+
+/* Couleurs des priorités */
+.notification-items li[data-priority="default"] {
+  color: #1a73e8; /* bleu */
+}
+
+.notification-items li[data-priority="urgent"] {
+  color: #e1003c; /* rouge */
+}
+
+/* 3e item : rendu via dangerouslySetInnerHTML (sans data-priority) -> forcer en rouge */
+.notification-items li:last-child,
+.notification-items li:last-child strong {
+  color: #e1003c;
+}
