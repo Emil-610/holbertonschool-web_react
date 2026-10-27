@@ -3,66 +3,95 @@
 }
 
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 8px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
 }
 
 .App {
-  min-height: 100vh;
-  padding: 0px;
+  min-height: calc(100vh - 16px);
   display: flex;
   flex-direction: column;
 }
 
 .App-header {
   display: flex;
-  justify-content: left;
   align-items: center;
-  border-bottom: 2px solid #e1003c;
-  padding: 0px;
+  min-height: 283px;
+  border-bottom: 3px solid #e8414b;
+  overflow: hidden;
 }
 
 .App-header img {
-  width: auto;
-  height: 90px;
-  margin-left: -40px;
- }
+  width: 260px;
+  height: 280px;
+  object-fit: cover;
+  flex-shrink: 0;
+  transform: translateY(5px);
+}
 
 .App-header h1 {
-  color: #e13100;
-  font-size: 10px;
-  margin-left: -40px;
+  margin: 0 0 0 2px;
+  color: #e8414b;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 44px;
+  letter-spacing: 1px;
+  transform: translateY(5px);
 }
 
 .App-body {
   flex: 1;
-  padding: 10px 10px;
-  font-size: 5px;
+  padding: 24px 30px;
+}
+
+.App-body p {
+  margin: 20px 0 14px;
 }
 
 .App-footer {
-  border-top: 2px solid #e1003c;
+  border-top: 3px solid #e8414b;
   text-align: center;
-  padding-top: 5px;
-  font-size: 5px;
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
   font-style: italic;
 }
 .App-body label {
-  margin-right: 3px;
+  margin-right: 8px;
 }
 
 .App-body input {
-  width: 50px;
-  height: 10px;
-  font-size: 10px;
-  margin-right: 3px;
+  width: 180px;
+  height: 22px;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
 .App-body button {
-  height: 10px;
-  width: 2px;
-  font-size: 5px;
-  display: inline-flex;
-  justify-content: center;
-  background-image: rgb(73, 73, 73);
+  height: 22px;
+  padding: 1px 3px;
+  vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+  .App-header {
+    min-height: 200px;
+  }
+
+  .App-header img {
+    width: 150px;
+    height: 190px;
+  }
+
+  .App-header h1 {
+    font-size: 28px;
+  }
+
+  .App-body {
+    padding: 24px 16px;
+  }
+
+  .App-body input {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
 }

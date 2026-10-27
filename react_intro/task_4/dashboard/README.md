@@ -1,16 +1,33 @@
-# React + Vite
+# Holberton school dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React intro dashboard with notifications, a sign-in form, and a footer.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```sh
+npm ci
+npm run dev
+```
 
-## React Compiler
+## Check the application
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```sh
+npm test -- --watchAll=false --runInBand
+npm run build
+```
 
-## Expanding the ESLint configuration
+## Deploy to GitHub Pages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```sh
+npm run deploy
+```
+
+The predeploy script builds the application. The deploy script publishes `dist/`
+to the `gh-pages` branch and includes `.nojekyll`.
+
+In repository Settings > Pages, select "Deploy from a branch", `gh-pages`,
+and `/(root)`.
+
+Live dashboard: https://ironplayer2009.github.io/holbertonschool-web_react/
+
+The same URL is recorded in `holberton-dashboard.txt` for task 8.
