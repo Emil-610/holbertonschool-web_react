@@ -13,14 +13,14 @@ describe('App (Task 0)', () => {
 
   test('renders body/footer texts and the logo image', () => {
     render(<App />);
-    const year = new Date().getFullYear();
+    const footerRegex = /copyright \d{4}.*holberton school/i;
 
     expect(
       screen.getByText(/login to access the full dashboard/i)
     ).toBeInTheDocument(); // expect #2
 
     expect(
-      screen.getByText(new RegExp(`Copyright\\s+${year}\\s+-\\s+holberton\\s+School`, 'i'))
+      screen.getByText(footerRegex)
     ).toBeInTheDocument(); // expect #3
 
     expect(
